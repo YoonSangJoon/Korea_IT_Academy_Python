@@ -1,0 +1,101 @@
+"""
+
+    < 학생 관리 프로그램 >
+    1. 학번, 이름, 학년, 반, 번호, 점수, 등급 으로 구성된 학생 정보 1개 만들기
+        (딕셔너리 사용)
+        ** 학번 : 학년/반/번호 조합
+                    3학년 12반 7번 : 31207
+    2. 5명에 대한 정보 만들기
+        (리스트 + 딕셔너리 사용)
+        for문 사용하여 input()으로 입력도 각각 받고,
+        모든 정보도 출력
+    3. 메뉴 만들기 (최대 10명까지만 저장 가능)
+      1) 학생 등록 -> 학년/반/번호/이름/점수 5개 입력 받음 (학번/등급은 자동 계산)
+      2) 모든 학생 보기 -> 모든 학생들의 모든 정보
+      3) 학생 검색 (학번으로 검색) -> 해당 학번을 가진 학생의 모든 정보.
+                                     없는 학번이면 "미등록 학생"을 출력
+      4) 학년 별 1등 학생 보기 -> 학년을 입력 받고 (1 ~ 6) 해당 학년의 학생 중 점수 1등 학생의
+                                 이름과 점수 출력
+      5) 종료
+"""
+
+""" 문제 1 답
+grade = 3
+cls = 7
+num = 24
+st_num = str(grade) + '{:02}'.format(cls) + '{:02}'.format(num)    # 30724
+print(st_num)
+
+st = {}
+st['name'] = input("학생 이름 : ")
+st['grade'] = int(input("학년 : "))
+st['class'] = int(input("반 : "))
+st['num'] = int(input("번호 : "))
+st['st_num'] = str(st['grade']) \
+               + '{:02}'.format(st['class']) \
+               + '{:02}'.format(st['num'])
+st['score'] = float(input("점수 : "))
+if st['score'] >= 90:
+    st['rating'] = 'A'
+elif st['score'] >= 80:
+    st['rating'] = 'B'
+elif st['score'] >= 70:
+    st['rating'] = 'C'
+elif st['score'] >= 60:
+    st['rating'] = 'D'
+else:
+    st['rating'] = 'F'
+print(st)
+"""
+
+
+""" 문제 2 답 
+students = [{}, {}, {}, {}, {}]
+
+for i in range(5):  # i : 0 ~ 4
+    s = {}
+
+    # 이름
+    s["name"] = input("학생 이름:")
+
+    # 학년
+    s['grade'] = input("학년 : ")
+
+    # 반
+    s['class'] = int(input("반 : "))
+
+    # 번호
+    s['num'] = int(input("번호 : "))
+
+    # 학번 만들기
+    s['st_num'] = s['grade'] + '{:02}'.format(s['class']) + '{:02}'.format(s['num'])
+
+    # 점수
+    score = float(input("점수 : "))
+
+    # 등급
+    r = 'F'
+    if score >= 90:
+        r = 'A'
+    elif score >= 80:
+        r = 'B'
+    elif score >= 70:
+        r = 'C'
+    elif score >= 60:
+        r = 'D'
+    s['score'] = score
+    s['rating'] = r
+
+    # 딕셔너리 s(딕셔너리의 주소)를 students 리스트에 저장
+    students[i] = s
+
+for e in students:
+    print(e)
+"""
+
+
+
+
+
+
+

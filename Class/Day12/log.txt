@@ -1,0 +1,9 @@
+8 X 1, 8, True
+3 X 7, 27, False
+2 X 4, 8, True
+6 X 3, 18, True
+9 X 6, 54, True
+5 X 5, 0, False
+2 X 4, 8, True
+8 X 6, 48, True
+4 X 5, 0, False

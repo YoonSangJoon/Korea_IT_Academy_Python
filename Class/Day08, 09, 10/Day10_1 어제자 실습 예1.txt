@@ -1,0 +1,64 @@
+students = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}]
+last_idx = 0  # 현재 등록된 학생 수 (= 빈 칸들 중 가장 앞 칸의 인덱스)
+while True:
+    print("1. 학생 등록")
+    print("2. 모든 학생 보기")
+    print("3. 학생 검색")
+    print("4. 1등 보기")
+    print("5. 종료")
+    select = int(input("선택:"))
+    if select == 1:
+        if last_idx < 10:
+            s = {}
+
+            # 이름
+            s["name"] = input("학생 이름:")
+
+            # 학년
+            s['grade'] = input("학년 : ")
+
+            # 반
+            s['class'] = int(input("반 : "))
+
+            # 번호
+            s['num'] = int(input("번호 : "))
+
+            # 학번 만들기
+            s['st_num'] = s['grade'] + '{:02}'.format(s['class']) + '{:02}'.format(s['num'])
+
+            # 점수
+            score = float(input("점수 : "))
+
+            # 등급
+            r = 'F'
+            if score >= 90:
+                r = 'A'
+            elif score >= 80:
+                r = 'B'
+            elif score >= 70:
+                r = 'C'
+            elif score >= 60:
+                r = 'D'
+            s['score'] = score
+            s['rating'] = r
+
+            # 딕셔너리 s(딕셔너리의 주소)를 students 리스트에 저장
+            students[last_idx] = s
+
+            # 학생 수 1증가
+            last_idx += 1
+        else:
+            print("학생 수 초과")
+    elif select == 2:
+        for i in range(last_idx):  # e.g. last_idx->3이면 range()-->0,1,2
+            print("{}/{}/{}/{}".format(students[i]['st_num'],
+                                       students[i]['name'],
+                                       students[i]['score'],
+                                       students[i]['rating']))  # 학번/이름/점수/등급
+    elif select == 3:
+        pass
+    elif select == 4:
+        pass
+    elif select == 5:
+        print("프로그램을 종료합니다.")
+        exit(0)  # 프로그램 종료 (break 도 논리적으로 같은 결과)

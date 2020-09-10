@@ -1,0 +1,46 @@
+
+
+Book 객체1( id :1 , title : ..., price : ...)
+
+Book 객체2( id :2 , title : ..., price : ...)
+
+Book 객체3( id :3 , title : ..., price : ...)
+
+books=[ Book 객체1, Book 객체2, Book 객체3 ]   # for 사용 쉬움 (검색 어려움)
+
+# 모든 정보 보기
+for b in books : 
+	print( b.get_info() ) 
+
+# 검색하기
+for b in books :
+	if 찾을_아이디 == b.id :
+	... 
+====================================================
+
+books = { 1:Book 객체1 , 2:Book 객체2, 3:Book 객체3}   # 검색 쉬움 ( for사용 어려움 ) 
+
+# 검색하기
+if books.__contains__(찾을_아이디) : 
+	print(books[찾을_아이디].get_info())
+else: 
+	print("미등록 아이디")
+
+# 모든 정보 보기
+for b in books.keys():
+    	print(books[b].get_into())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+class AA :
+	def func1(self):
+		~~~~~~
+		# 같은 클래스 소속의 식구 메서드를 호출 : self.메서드명()
+		self.func2()		
+
+	def func2(self):
+		~~~~~~
+
+a = AA()
+
+# 클래스 외부에서 메서드 호출 : 객체명.메서드명()
+a.func2()
